@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f5fa">
+  <title>Practice quiz | Studyroom</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html" aria-label="Studyroom home">
+        <span class="brand-icon" aria-hidden="true">s</span>
+        <span>studyroom</span>
+      </a>
+      <p class="side-label">YOUR STUDY TOOLS</p>
+      <nav class="tool-nav" aria-label="Study tools">
+        <a class="nav-item" href="index.html">
+          <span class="nav-icon" aria-hidden="true">✳</span><span>Ask a question</span>
+        </a>
+        <a class="nav-item is-active" href="quiz.html" aria-current="page">
+          <span class="nav-icon" aria-hidden="true">☷</span><span>Practice quiz</span>
+        </a>
+        <a class="nav-item" href="flashcards.html">
+          <span class="nav-icon" aria-hidden="true">▤</span><span>Flashcards</span>
+        </a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="tip-card">
+          <span class="tip-spark" aria-hidden="true">✦</span>
+          <strong>Small steps count.</strong>
+          <p>Pick one thing to learn today. You’ve got this.</p>
+        </div>
+        <p class="side-caption">A little help for the learning journey.</p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumb">Your learning space <span>/</span> <strong>Practice quiz</strong></div>
+        <div class="connection">
+          <span id="connection-indicator" class="connection-dot" aria-hidden="true"></span>
+          <label for="api-url">API</label>
+          <input id="api-url" type="url" aria-label="Backend API base URL" spellcheck="false">
+          <button id="check-connection" class="text-button" type="button">Check</button>
+        </div>
+      </header>
+
+      <section class="welcome">
+        <div class="welcome-copy">
+          <p class="eyebrow">YOUR AI STUDENT ASSISTANT</p>
+          <h1>Practice a little.<br>Learn a lot.</h1>
+          <p>Turn a subject into a quick quiz and build confidence as you go.</p>
+        </div>
+        <div class="welcome-art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="book book-back"></div>
+          <div class="book book-front"><span></span><span></span><span></span></div>
+          <div class="spark spark-one">✦</div>
+          <div class="spark spark-two">✳</div>
+        </div>
+      </section>
+
+      <section class="tool-section" aria-labelledby="section-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">LET’S GET STARTED</p>
+            <h2 id="section-title">Practice quiz</h2>
+          </div>
+          <p class="section-description">Choose a topic and see what you already know.</p>
+        </div>
+        <div class="tool-card">
+          <section aria-labelledby="quiz-title">
+            <div class="panel-heading">
+              <span class="panel-icon quiz-icon" aria-hidden="true">☷</span>
+              <div><h3 id="quiz-title">Make a practice quiz</h3><p>Pick a subject and test your understanding.</p></div>
+            </div>
+            <form id="quiz-form" class="tool-form">
+              <div class="field">
+                <label for="quiz-topic">What are you studying?</label>
+                <input id="quiz-topic" name="topic" type="text" minlength="3" placeholder="e.g. Cell biology" required>
+              </div>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="quiz-count">Questions</label>
+                  <select id="quiz-count" name="number_questions">
+                    <option value="3" selected>3 questions</option>
+                    <option value="5">5 questions</option>
+                    <option value="8">8 questions</option>
+                    <option value="10">10 questions</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="quiz-options">Answer choices</label>
+                  <select id="quiz-options" name="number_options">
+                    <option value="4" selected>4 choices</option>
+                    <option value="5">5 choices</option>
+                    <option value="6">6 choices</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-footer">
+                <span class="helper-text">Choose an answer to see if you got it right.</span>
+                <button class="primary-button" type="submit"><span>Build my quiz</span><span aria-hidden="true">↗</span></button>
+              </div>
+            </form>
+            <div id="quiz-result" class="result-area" aria-live="polite" aria-atomic="true"></div>
+          </section>
+        </div>
+      </section>
+      <footer class="page-footer">Take your time. Learning happens one question at a time.</footer>
+    </main>
+  </div>
+</body>
+</html>

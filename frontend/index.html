@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f5fa">
+  <title>Ask a question | Studyroom</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      },
+      startup: {
+        typeset: false
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html" aria-label="Studyroom home">
+        <span class="brand-icon" aria-hidden="true">s</span>
+        <span>studyroom</span>
+      </a>
+
+      <p class="side-label">YOUR STUDY TOOLS</p>
+      <nav class="tool-nav" aria-label="Study tools">
+        <a class="nav-item is-active" href="index.html" aria-current="page">
+          <span class="nav-icon" aria-hidden="true">✳</span><span>Ask a question</span>
+        </a>
+        <a class="nav-item" href="quiz.html">
+          <span class="nav-icon" aria-hidden="true">☷</span><span>Practice quiz</span>
+        </a>
+        <a class="nav-item" href="flashcards.html">
+          <span class="nav-icon" aria-hidden="true">▤</span><span>Flashcards</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="tip-card">
+          <span class="tip-spark" aria-hidden="true">✦</span>
+          <strong>Small steps count.</strong>
+          <p>Pick one thing to learn today. You’ve got this.</p>
+        </div>
+        <p class="side-caption">A little help for the learning journey.</p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumb">Your learning space <span>/</span> <strong>Ask a question</strong></div>
+        <div class="connection">
+          <span id="connection-indicator" class="connection-dot" aria-hidden="true"></span>
+          <label for="api-url">API</label>
+          <input id="api-url" type="url" aria-label="Backend API base URL" spellcheck="false">
+          <button id="check-connection" class="text-button" type="button">Check</button>
+        </div>
+      </header>
+
+      <section class="tool-section" aria-labelledby="section-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">YOUR STUDY CONVERSATION</p>
+            <h2 id="section-title">Talk it through</h2>
+          </div>
+          <p class="section-description">Ask a question and work through it together.</p>
+        </div>
+
+        <div class="tool-card chat-workspace">
+          <section class="chat-panel" aria-labelledby="chat-title">
+            <header class="chat-header">
+              <span class="chat-assistant-avatar" aria-hidden="true">s</span>
+              <div>
+                <h3 id="chat-title">Studyroom assistant</h3>
+                <p>Ask about a concept or a tricky topic</p>
+              </div>
+            </header>
+
+            <div id="chat-thread" class="chat-thread" role="log" aria-label="Conversation" aria-live="polite" aria-relevant="additions text">
+              <div id="chat-empty" class="chat-empty">
+                <span class="chat-empty-icon" aria-hidden="true">✳</span>
+                <h4>What are you working through?</h4>
+                <p>Send a question to start. Your messages and replies will appear here.</p>
+                <div class="chat-suggestions" aria-label="Try asking">
+                  <button class="chat-suggestion" type="button" data-prompt="Can you explain a difficult concept in simple terms?">Explain a concept</button>
+                  <button class="chat-suggestion" type="button" data-prompt="Help me review the key ideas in my study topic.">Review a topic</button>
+                </div>
+              </div>
+            </div>
+
+            <form id="chat-form" class="chat-composer">
+              <label class="visually-hidden" for="chat-message">Your message</label>
+              <div class="chat-input-shell">
+                <textarea id="chat-message" name="message" rows="1" minlength="4" placeholder="Write a message…" required></textarea>
+                <button class="primary-button chat-send" type="submit" aria-label="Send message">
+                  <span>Send</span><span aria-hidden="true">↗</span>
+                </button>
+              </div>
+              <p class="chat-composer-hint">Enter to send · Shift + Enter for a new line. Include context in follow-up questions.</p>
+            </form>
+            <div id="chat-feedback" class="result-area chat-feedback" aria-live="polite"></div>
+          </section>
+        </div>
+      </section>
+      <footer class="page-footer">Take your time. Learning happens one question at a time.</footer>
+    </main>
+  </div>
+</body>
+</html>
